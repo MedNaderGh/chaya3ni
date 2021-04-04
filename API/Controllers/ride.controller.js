@@ -7,14 +7,16 @@ var jwt = require('jsonwebtoken');
 module.exports.add = (req, res, next) => {
     var ride = new Ride();
 
-    ride.song = req.body.song;
+    ride.song = req.body.music;
     ride.smoking = req.body.smoking;
     ride.bag = req.body.bag;
-    ride.lieu_dep = req.body.lieu_dep;
-    ride.lieu_arr = req.body.lieu_arr;
+    ride.lieu_dep = req.body.Ville_depart;
+    ride.lieu_arr = req.body.Ville_arrivee;
+    ride.cord_depart = req.body.cord_depart;
+    ride.cord_arr = req.body.cord_arrivee;
     ride.id_user = req.body.id_user;
-    ride.date_dep = req.body.date_dep;
-    ride.nb_places = req.body.nb_places;
+    ride.date_heur_dep = req.body.myDate;
+    ride.nb_places = req.body.place;
     ride.prix = req.body.prix;
 
     ride.save((err, doc) => {

@@ -21,10 +21,18 @@ let Ride = new Schema({
     },
     lieu_arr: {
         type: String,
-        unique: true,
         required: true
     },
-    date_dep: {
+    cord_arr: {
+        type: String,
+        required: true
+    },
+    cord_depart: {
+        type: String,
+        required: true
+    },
+
+    date_heur_dep: {
         type: String,
         required: true
     },
