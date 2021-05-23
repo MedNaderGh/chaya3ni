@@ -20,6 +20,24 @@ let User = new Schema({
     type: String,
     required: true
   },
+  lat: {
+    type: String,
+  },
+  lng: {
+    type: String,
+  },
+  taxi: {
+    type: Boolean,
+    default: false
+  },
+  ride: {
+    type: Boolean,
+    default: false
+  },
+  offre: {
+    type: Boolean,
+    default: false
+  },
   phone: {
     type: String,
     required: true
@@ -27,7 +45,7 @@ let User = new Schema({
   saltSecret: String
 },{
     collection: 'user'
-});
+},{strict: false});
 User.pre('save', function (next) {
   bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(this.password, salt, (err, hash) => {
@@ -47,4 +65,4 @@ User.methods.generateJwt = function () {
       expiresIn: process.env.JWT_EXP
   });
 }
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.models.User || mongoose.model('User', User);

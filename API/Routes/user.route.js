@@ -14,5 +14,10 @@ var ObjectId = require('mongoose').Types.ObjectId;
 userRoutes.post('/register', ctrlUser.register);
 userRoutes.post('/authenticate', ctrlUser.authenticate);
 userRoutes.post('/updatepwd', ctrlUser.updatepwd);
-
+userRoutes.get('/taxi', ctrlUser.taxi);
+userRoutes.post('/offre', ctrlUser.offre);
+userRoutes.post('/checkoffre', ctrlUser.checkoffre);
+userRoutes.post('/deleteoffre', ctrlUser.deleteoffre);
+userRoutes.post('/comment',ctrlUser.comment);
+userRoutes.get('/getcomment/:id',ctrlUser.getcomment);
 module.exports = userRoutes
