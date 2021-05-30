@@ -11,4 +11,5 @@ const jwtHelper = require('../config/jwtHelper');
 var ObjectId = require('mongoose').Types.ObjectId;
 rideRoutes.post('/add', ctrlRide.add);
 rideRoutes.post('/fetchId', ctrlRide.fetchId);
+rideRoutes.get('/getrides',ctrlRide.getrides);
 module.exports = rideRoutes

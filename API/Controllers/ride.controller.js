@@ -55,5 +55,18 @@ module.exports.fetchId = (req, res) => {
     });
 }*/
 
+module.exports.getrides = (req, res) => {
+    Ride.find(
+    function (err, ride) {
+        if (err) throw err;
+        if (!ride) {
+            res.status(401).send({ success: false, msg: 'update' });
+        } else {
+            return res.json(ride);
+        }
+    }); 
+  }
+
+
 
 
